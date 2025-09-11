@@ -41,7 +41,7 @@ jobs:
           password: ${{ secrets.VM_PASSWORD }}
           port: 22
           script: |
-            docker pull cyprienderuelle/cd:latest
-            docker stop cd || true
-            docker rm cd || true
-            docker run -d --name cd -p 80:80 cyprienderuelle/cd:latest
+            sudo docker pull cyprienderuelle/cd:latest
+            sudo docker stop cd || true
+            sudo docker rm cd || true
+            sudo docker run -d --name cd -p 80:80 cyprienderuelle/cd:latest
