@@ -38,7 +38,8 @@ jobs:
         with:
           host: ${{ secrets.VM_HOST }}
           username: ${{ secrets.DOCKER_USERNAME }}
-          key: ${{ secrets.VM_PASSWORD }}
+          password: ${{ secrets.VM_PASSWORD }}
+          port: 8022
           script: |
             docker pull cyprienderuelle/my-app:latest
             docker stop my-app || true
