@@ -37,7 +37,7 @@ jobs:
         uses: appleboy/ssh-action@v0.1.9
         with:
           host: ${{ secrets.VM_HOST }}
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: ${{ secrets.VM_USERNAME }}
           password: ${{ secrets.VM_PASSWORD }}
           port: 22
           script: |
