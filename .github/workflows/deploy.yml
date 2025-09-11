@@ -37,8 +37,8 @@ jobs:
         uses: appleboy/ssh-action@v0.1.9
         with:
           host: ${{ secrets.VM_HOST }}
-          username: ${{ secrets.VM_USER }}
-          key: ${{ secrets.VM_SSH_KEY }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          key: ${{ secrets.VM_PASSWORD }}
           script: |
             docker pull cyprienderuelle/my-app:latest
             docker stop my-app || true
