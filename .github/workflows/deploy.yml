@@ -19,6 +19,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+
       - name: Build Docker image
         run: |
           docker build -t my-dockerhub-username/my-app:latest .
