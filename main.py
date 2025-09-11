@@ -14,3 +14,4 @@ if response.status_code == 200:
     print("Prediction :", response.json())
 else:
     print("Erreur :", response.status_code, response.text)
+
