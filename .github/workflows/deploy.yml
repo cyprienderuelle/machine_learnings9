@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main  # Trigger on push to main branch
+      - main
 
 jobs:
   build_and_push:
@@ -22,11 +22,11 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t my-dockerhub-username/my-app:latest .
+          docker build -t cyprienderuelle/my-app:latest .
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker push my-dockerhub-username/my-app:latest
+          docker push cyprienderuelle/my-app:latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -40,7 +40,7 @@ jobs:
           username: ${{ secrets.VM_USER }}
           key: ${{ secrets.VM_SSH_KEY }}
           script: |
-            docker pull my-dockerhub-username/my-app:latest
+            docker pull cyprienderuelle/my-app:latest
             docker stop my-app || true
             docker rm my-app || true
-            docker run -d --name my-app -p 80:80 my-dockerhub-username/my-app:latest
+            docker run -d --name my-app -p 80:80 cyprienderuelle/my-app:latest
