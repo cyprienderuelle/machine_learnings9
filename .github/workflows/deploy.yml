@@ -39,7 +39,7 @@ jobs:
           host: ${{ secrets.VM_HOST }}
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.VM_PASSWORD }}
-          port: 80
+          port: 22
           script: |
             docker pull cyprienderuelle/cd:latest
             docker stop cd || true
